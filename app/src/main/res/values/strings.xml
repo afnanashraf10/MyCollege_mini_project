@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">My College</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_admin">Admin</string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+
+    <string-array name="branches">
+        <item>CSE</item>
+        <item>MECH</item>
+        <item>CEE</item>
+        <item>EEE</item>
+        <item>EI</item>
+        <item>ECE</item>
+    </string-array>
+
+    <string-array name="semester">
+        <item>S1</item>
+        <item>S2</item>
+        <item>S3</item>
+        <item>S4</item>
+        <item>S5</item>
+        <item>S6</item>
+        <item>S7</item>
+        <item>S8</item>
+    </string-array>
+
+    <string-array name="days">
+        <item>Monday</item>
+        <item>Tuesday</item>
+        <item>Wednesday</item>
+        <item>Thursday</item>
+        <item>Friday</item>
+    </string-array>
+
+</resources>
