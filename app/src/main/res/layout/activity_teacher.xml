@@ -9,6 +9,7 @@
     tools:context="mp.kafa.mycollege.Teacher">
 
     <LinearLayout
+        android:layout_margin="10dp"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -25,28 +26,121 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             />
-
-
-
+        <ImageView
+            android:id="@+id/stu_image"
+            android:layout_width="wrap_content"
+            android:layout_height="96dp"
+            android:src="@drawable/propic" />
         <LinearLayout
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginTop="20dp"
-            android:orientation="vertical"
+            android:layout_marginTop="10dp"
+            android:weightSum="2"
+            android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-            <LinearLayout
+            <TextView
+                android:textSize="25dp"
+                android:textColor="#fff"
+                android:text="Name : "
+                android:layout_weight="1"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:weightSum="1">
-                <ImageView
-                    android:id="@+id/tea_image"
-                    android:layout_width="wrap_content"
-                    android:layout_height="96dp"
-                    android:src="@drawable/propic"
-                    />
+                android:layout_height="match_parent" />
+            <TextView
+                android:id="@+id/prof_name"
+                android:textSize="25dp"
+                android:textColor="#fff"
+                android:text="Loading..."
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:weightSum="2"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textSize="25dp"
+                android:textColor="#fff"
+                android:text="Branch : "
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+            <TextView
+                android:id="@+id/prof_branch"
+                android:textSize="25dp"
+                android:textColor="#fff"
+                android:text="Loading..."
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </LinearLayout>
 
-            </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:weightSum="2"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textSize="25dp"
+                android:textColor="#fff"
+                android:text="Date of birth : "
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+            <TextView
+                android:id="@+id/prof_dob"
+                android:textSize="25dp"
+                android:textColor="#fff"
+                android:text="Loading..."
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:weightSum="2"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textSize="25dp"
+                android:textColor="#fff"
+                android:text="Email ID : "
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+            <TextView
+                android:id="@+id/prof_email"
+                android:textSize="25dp"
+                android:textColor="#fff"
+                android:text="Loading..."
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:weightSum="2"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textSize="25dp"
+                android:textColor="#fff"
+                android:text="Phone : "
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+            <TextView
+                android:id="@+id/prof_phone"
+                android:textSize="25dp"
+                android:textColor="#fff"
+                android:text="Loading..."
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
         </LinearLayout>
     </LinearLayout>
 

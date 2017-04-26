@@ -56,4 +56,6 @@ public class Student extends Activity {
         server.connectServer("http://leomessi10.esy.es/profile.php?username="+settings.retriveSettings("username")+"&password="+settings.retriveSettings("password"));
 
     }
+
+
 }
