@@ -1,8 +1,11 @@
 package mp.kafa.mycollege;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.webkit.WebView;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -12,6 +15,7 @@ public class Student extends Activity {
     AppSettings settings;
     WebView timetable;
     TextView name,branch,sem,dob,email,phone;
+    Button stu_vtt;
 
 
     public void init()
@@ -23,6 +27,7 @@ public class Student extends Activity {
         dob=(TextView)findViewById(R.id.prof_dob);
         email=(TextView)findViewById(R.id.prof_email);
         phone=(TextView)findViewById(R.id.prof_phone);
+        stu_vtt=(Button)findViewById(R.id.stu_vtt);
     }
 
     @Override
@@ -31,6 +36,14 @@ public class Student extends Activity {
         setContentView(R.layout.activity_student);
         getActionBar().hide();
         init();
+        stu_vtt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent i=new Intent(Student.this,TimeTable.class);
+                startActivity(i);
+            }
+        });
 
         ServerConnector server=new ServerConnector(getApplicationContext());
         server.setOnServerStatusListner(new ServerConnector.OnServerStatusListner() {
@@ -56,6 +69,5 @@ public class Student extends Activity {
         server.connectServer("http://leomessi10.esy.es/profile.php?username="+settings.retriveSettings("username")+"&password="+settings.retriveSettings("password"));
 
     }
+    }
 
-
-}

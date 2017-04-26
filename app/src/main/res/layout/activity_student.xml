@@ -162,6 +162,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
         </LinearLayout>
+
+        <Button
+            android:layout_marginTop="10dp"
+            android:id="@+id/stu_vtt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/linearLayout"
+            android:layout_centerHorizontal="true"
+            android:text="View TimeTable" />
+
     </LinearLayout>
 
 
