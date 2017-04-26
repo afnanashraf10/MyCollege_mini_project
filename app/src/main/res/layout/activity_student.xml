@@ -8,6 +8,7 @@
     android:layout_height="match_parent"
     tools:context="mp.kafa.mycollege.MainActivity">
     <LinearLayout
+        android:layout_margin="10dp"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -29,15 +30,140 @@
             android:layout_width="wrap_content"
             android:layout_height="96dp"
             android:src="@drawable/propic" />
-<TextView
-    android:id="@+id/stu_name"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="Name :"
-    android:textSize="35dp"
-    android:textColor="#fff"/>
-
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:weightSum="2"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:textSize="25dp"
+            android:textColor="#fff"
+            android:text="Name : "
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+        <TextView
+            android:id="@+id/prof_name"
+            android:textSize="25dp"
+            android:textColor="#fff"
+            android:text="Loading..."
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
     </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:weightSum="2"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textSize="25dp"
+                android:textColor="#fff"
+                android:text="Branch : "
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+            <TextView
+                android:id="@+id/prof_branch"
+                android:textSize="25dp"
+                android:textColor="#fff"
+                android:text="Loading..."
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:weightSum="2"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textSize="25dp"
+                android:textColor="#fff"
+                android:text="Semester : "
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+            <TextView
+                android:id="@+id/prof_sem"
+                android:textSize="25dp"
+                android:textColor="#fff"
+                android:text="Loading..."
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:weightSum="2"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textSize="25dp"
+                android:textColor="#fff"
+                android:text="Date of birth : "
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+            <TextView
+                android:id="@+id/prof_dob"
+                android:textSize="25dp"
+                android:textColor="#fff"
+                android:text="Loading..."
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:weightSum="2"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textSize="25dp"
+                android:textColor="#fff"
+                android:text="Email ID : "
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+            <TextView
+                android:id="@+id/prof_email"
+                android:textSize="25dp"
+                android:textColor="#fff"
+                android:text="Loading..."
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:weightSum="2"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textSize="25dp"
+                android:textColor="#fff"
+                android:text="Phone : "
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+            <TextView
+                android:id="@+id/prof_phone"
+                android:textSize="25dp"
+                android:textColor="#fff"
+                android:text="Loading..."
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+    </LinearLayout>
+
 
 
 </RelativeLayout>

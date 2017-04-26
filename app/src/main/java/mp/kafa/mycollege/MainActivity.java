@@ -54,6 +54,8 @@ public class MainActivity extends Activity {
                         }
                         else
                         {
+                            settings.saveSettings("username",username.getText().toString());
+                            settings.saveSettings("password",password.getText().toString());
                             String[] res=responce.split("____");
                             settings.saveSettings("id",res[0]);
                             settings.saveSettings("who",res[1]);
