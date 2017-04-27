@@ -24,7 +24,8 @@
         <activity android:name=".Student" />
         <activity android:name=".Teacher" />
         <activity android:name=".TimeTable" />
-        <activity android:name=".TimeTab"></activity>
+        <activity android:name=".TimeTab" />
+        <activity android:name=".AddAttendance"></activity>
     </application>
 
 </manifest>
