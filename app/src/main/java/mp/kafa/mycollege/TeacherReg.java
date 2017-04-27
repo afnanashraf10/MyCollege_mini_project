@@ -183,7 +183,7 @@ public class TeacherReg extends Fragment
                     }
                     else
                     {
-                        Toast.makeText(getActivity(), "Password length must be atleast 10", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getActivity(), "Password length must be atleast 6", Toast.LENGTH_SHORT).show();
                         return false;
                     }
                 }

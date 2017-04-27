@@ -135,14 +135,14 @@ public class Assignment extends Fragment {
                     progress.dismiss();
                 } else {
                     progress.dismiss();
-                    alert.setTitle("Registration Error");
-                    alert.setMessage("Username is already registered");
+                    alert.setTitle("Oops..! An error occurred");
+                    alert.setMessage("Subject already added");
                     alert.show();
                 }
             }
             @Override
             public void onServerRevoked() {
-                Toast.makeText(getActivity(), "Oops..! An error occured", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), "Oops..! An error occurred", Toast.LENGTH_SHORT).show();
             }
         });
         server.connectServer("http://leomessi10.esy.es/subupload.php?branch="+branch.getSelectedItem().toString()+"&name="+subject.getText().toString()+"&sem="+sem.getSelectedItem().toString());
