@@ -10,9 +10,6 @@ import android.widget.Toast;
 
 import java.util.List;
 
-/**
- * Created by Amrutha on 4/27/2017.
- */
 
 public class AttendanceAdapter extends BaseAdapter {
     List<LogIn> students;
@@ -48,7 +45,19 @@ public class AttendanceAdapter extends BaseAdapter {
         attendance.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                Toast.makeText(context, "Click Change", Toast.LENGTH_SHORT).show();
+                ServerConnector server=new ServerConnector(context);
+                server.setOnServerStatusListner(new ServerConnector.OnServerStatusListner() {
+                    @Override
+                    public void onServerResponded(String responce) {
+
+                    }
+
+                    @Override
+                    public void onServerRevoked() {
+
+                    }
+                });
+                server.connectServer("");
             }
         });
 

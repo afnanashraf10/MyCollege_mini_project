@@ -2,7 +2,10 @@ package mp.kafa.mycollege;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Spinner;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -11,6 +14,7 @@ import java.util.List;
 
 public class AddAttendance extends Activity {
     ListView studentslist;
+    Spinner branch,sem,hour;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,26 +22,38 @@ public class AddAttendance extends Activity {
         setContentView(R.layout.activity_add_attendance);
         getActionBar().hide();
         studentslist=(ListView)findViewById(R.id.studentslist);
+        branch=(Spinner)findViewById(R.id.att_branch);
+        sem=(Spinner)findViewById(R.id.att_semester);
+        hour=(Spinner)findViewById(R.id.att_semester);
 
-
-
-        ServerConnector server=new ServerConnector(getApplicationContext());
-        server.setOnServerStatusListner(new ServerConnector.OnServerStatusListner() {
+        sem.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
-            public void onServerResponded(String responce) {
-                List<LogIn> students;
-                Gson gson=new Gson();
-                students = gson.fromJson(responce, new TypeToken<List<LogIn>>(){}.getType());
-                AttendanceAdapter adapter=new AttendanceAdapter(students,getApplicationContext());
-                studentslist.setAdapter(adapter);
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                ServerConnector server=new ServerConnector(getApplicationContext());
+                server.setOnServerStatusListner(new ServerConnector.OnServerStatusListner() {
+                    @Override
+                    public void onServerResponded(String responce) {
+                        List<LogIn> students;
+                        Gson gson=new Gson();
+                        students = gson.fromJson(responce, new TypeToken<List<LogIn>>(){}.getType());
+                        AttendanceAdapter adapter=new AttendanceAdapter(students,getApplicationContext());
+                        studentslist.setAdapter(adapter);
+                    }
+
+                    @Override
+                    public void onServerRevoked() {
+
+                    }
+                });
+                server.connectServer("http://leomessi10.esy.es/studentsbybranch.php?branch="+branch.getSelectedItem().toString()+"&sem="+sem.getSelectedItem().toString());
+
             }
 
             @Override
-            public void onServerRevoked() {
+            public void onNothingSelected(AdapterView<?> parent) {
 
             }
         });
-        server.connectServer("http://leomessi10.esy.es/studentsbybranch.php?branch=CSE&sem=S6");
 
     }
 }

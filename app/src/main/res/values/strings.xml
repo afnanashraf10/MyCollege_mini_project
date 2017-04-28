@@ -35,4 +35,14 @@
         <item>Friday</item>
     </string-array>
 
+    <string-array name="hours">
+        <item>Period 1</item>
+        <item>Period 2</item>
+        <item>Period 3</item>
+        <item>Period 4</item>
+        <item>Period 5</item>
+        <item>Period 6</item>
+        <item>Period 7</item>
+    </string-array>
+
 </resources>

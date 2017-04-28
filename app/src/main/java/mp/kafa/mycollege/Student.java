@@ -15,7 +15,7 @@ public class Student extends Activity {
     AppSettings settings;
     WebView timetable;
     TextView name,branch,sem,dob,email,phone;
-    Button stu_vtt;
+    Button stu_vtt,stu_vatt;
 
 
     public void init()
@@ -28,6 +28,7 @@ public class Student extends Activity {
         email=(TextView)findViewById(R.id.prof_email);
         phone=(TextView)findViewById(R.id.prof_phone);
         stu_vtt=(Button)findViewById(R.id.stu_vtt);
+        stu_vatt=(Button)findViewById(R.id.stu_vatt);
     }
 
     @Override
@@ -41,6 +42,13 @@ public class Student extends Activity {
             public void onClick(View v) {
 
                 Intent i=new Intent(Student.this,TimeTable.class);
+                startActivity(i);
+            }
+        });
+        stu_vatt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i=new Intent(Student.this,ViewAttendance.class);
                 startActivity(i);
             }
         });
