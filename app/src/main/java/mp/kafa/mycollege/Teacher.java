@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.gson.Gson;
 
@@ -35,6 +36,7 @@ public class Teacher extends Activity {
         m_att.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                dateCheck();
                 Intent i=new Intent(Teacher.this,AddAttendance.class);
                 startActivity(i);
             }
@@ -63,5 +65,42 @@ public class Teacher extends Activity {
         });
         server.connectServer("http://leomessi10.esy.es/profile.php?username="+settings.retriveSettings("username")+"&password="+settings.retriveSettings("password"));
 
+    }
+    public void dateCheck()
+    {
+        ServerConnector server=new ServerConnector(getApplicationContext());
+        server.setOnServerStatusListner(new ServerConnector.OnServerStatusListner() {
+            @Override
+            public void onServerResponded(String responce) {
+            if  (responce.equals("0"))
+                {
+                    studentEntry();
+                    Toast.makeText(getApplicationContext(), responce, Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onServerRevoked() {
+
+            }
+        });
+        server.connectServer("http://leomessi10.esy.es/attendancedate.php");
+    }
+    public void studentEntry()
+    {
+        ServerConnector server=new ServerConnector(getApplicationContext());
+        server.setOnServerStatusListner(new ServerConnector.OnServerStatusListner() {
+            @Override
+            public void onServerResponded(String responce) {
+
+                Toast.makeText(getApplicationContext(), "Tested", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onServerRevoked() {
+
+            }
+        });
+        server.connectServer("http://leomessi10.esy.es/studentsadd.php");
     }
 }

@@ -81,7 +81,8 @@ public class MainActivity extends Activity {
 
                     @Override
                     public void onServerRevoked() {
-                        Toast.makeText(MainActivity.this, "Oops..! Something went wrong", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(MainActivity.this, "Oops..! No Internet Connection", Toast.LENGTH_SHORT).show();
+                        progress.dismiss();
                     }
                 });
                 server.connectServer("http://leomessi10.esy.es/login.php?username="+username.getText().toString()+"&password="+password.getText().toString());

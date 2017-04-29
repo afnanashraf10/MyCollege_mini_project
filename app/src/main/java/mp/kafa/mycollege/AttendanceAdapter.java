@@ -8,6 +8,8 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.Toast;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.List;
 
 
@@ -41,7 +43,8 @@ public class AttendanceAdapter extends BaseAdapter {
         CheckBox attendance=(CheckBox)v.findViewById(R.id.student);
 
         attendance.setText(students.get(position).fname+" "+students.get(position).lname);
-
+         String date= getCurrentDate();
+        Toast.makeText(context,date,Toast.LENGTH_SHORT).show();
         attendance.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -49,7 +52,6 @@ public class AttendanceAdapter extends BaseAdapter {
                 server.setOnServerStatusListner(new ServerConnector.OnServerStatusListner() {
                     @Override
                     public void onServerResponded(String responce) {
-
                     }
 
                     @Override
@@ -62,5 +64,11 @@ public class AttendanceAdapter extends BaseAdapter {
         });
 
         return v;
+    }
+    public String getCurrentDate() {
+        Calendar calendar = Calendar.getInstance();
+        SimpleDateFormat mdformat = new SimpleDateFormat("dd / MM / yyyy ");
+        String strDate = "Current Date : " + mdformat.format(calendar.getTime());
+        return strDate;
     }
 }

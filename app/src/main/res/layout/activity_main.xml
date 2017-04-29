@@ -37,6 +37,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
             <EditText
+                android:text="abeera"
                 android:inputType="textPersonName"
                 android:id="@+id/username"
                 android:hint="Enter username here"
@@ -57,6 +58,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
             <EditText
+                android:text="abeera"
                 android:inputType="textPassword"
                 android:id="@+id/password"
                 android:hint="Enter password here"
