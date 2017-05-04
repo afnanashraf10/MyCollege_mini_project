@@ -45,4 +45,10 @@
         <item>Period 7</item>
     </string-array>
 
+    <string-array name="exams">
+        <item>Series 1</item>
+        <item>Series 2</item>
+        <item>Assignment 1</item>
+        <item>Assignment 2</item>
+    </string-array>
 </resources>

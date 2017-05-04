@@ -1,19 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    android:background="@drawable/loginbg"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="mp.kafa.mycollege.TimeTable">
+    tools:context="mp.kafa.mycollege.ViewInternalMark">
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <WebView
             android:scrollbars="none"
-            android:id="@+id/attendance"
+            android:id="@+id/internalmark"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
         </WebView>

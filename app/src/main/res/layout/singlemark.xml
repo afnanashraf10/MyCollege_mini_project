@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:background="#f1f1f1"
+    android:layout_margin="10dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:textColor="#000"
+        android:textSize="20dp"
+        android:id="@+id/user"
+        android:textAlignment="center"
+        android:text="Abdul Khadher"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <LinearLayout
+        android:weightSum="2"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:textColor="#000"
+            android:gravity="center|left"
+            android:layout_weight="1"
+            android:text="Series I mark"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+        <EditText
+            android:textColorHint="#636363"
+            android:textColor="#000"
+            android:id="@+id/series1"
+            android:layout_weight="1"
+            android:hint="Series I mark"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+    <LinearLayout
+        android:weightSum="2"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:textColor="#000"
+            android:gravity="center|left"
+            android:layout_weight="1"
+            android:text="Series II mark"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+        <EditText
+            android:textColorHint="#636363"
+            android:textColor="#000"
+            android:id="@+id/series2"
+            android:layout_weight="1"
+            android:hint="Series II mark"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+    <LinearLayout
+        android:weightSum="2"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:textColor="#000"
+            android:gravity="center|left"
+            android:layout_weight="1"
+            android:text="Assignment I mark"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+        <EditText
+            android:textColorHint="#636363"
+            android:textColor="#000"
+            android:id="@+id/assignment1"
+            android:layout_weight="1"
+            android:hint="Assignment I mark"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+    <LinearLayout
+        android:weightSum="2"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:textColor="#000"
+            android:gravity="center|left"
+            android:layout_weight="1"
+            android:textColorHint="#636363"
+            android:text="Assignment II mark"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+        <EditText
+            android:textColorHint="#636363"
+            android:textColor="#000"
+            android:id="@+id/assignment2"
+            android:layout_weight="1"
+            android:hint="Assignment II mark"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+    <Button
+        android:textColor="#000"
+        android:id="@+id/upload"
+        android:text="upload"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</LinearLayout>

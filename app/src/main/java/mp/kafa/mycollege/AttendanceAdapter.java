@@ -14,12 +14,15 @@ import java.util.List;
 
 
 public class AttendanceAdapter extends BaseAdapter {
+    String stat="P";
     List<LogIn> students;
     Context context;
+    String hour;
 
-    public AttendanceAdapter(List<LogIn> students, Context context) {
+    public AttendanceAdapter(List<LogIn> students, Context context, String hour) {
         this.students = students;
         this.context = context;
+        this.hour = hour;
     }
 
     @Override
@@ -38,20 +41,20 @@ public class AttendanceAdapter extends BaseAdapter {
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(final int position, View convertView, ViewGroup parent) {
         View v=View.inflate(context,R.layout.singleattendance,null);
-        CheckBox attendance=(CheckBox)v.findViewById(R.id.student);
+        final CheckBox attendance=(CheckBox)v.findViewById(R.id.student);
 
         attendance.setText(students.get(position).fname+" "+students.get(position).lname);
-         String date= getCurrentDate();
-        Toast.makeText(context,date,Toast.LENGTH_SHORT).show();
         attendance.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked)
+            {
                 ServerConnector server=new ServerConnector(context);
                 server.setOnServerStatusListner(new ServerConnector.OnServerStatusListner() {
                     @Override
                     public void onServerResponded(String responce) {
+
                     }
 
                     @Override
@@ -59,7 +62,15 @@ public class AttendanceAdapter extends BaseAdapter {
 
                     }
                 });
-                server.connectServer("");
+                if(attendance.isChecked())
+                {
+                    stat="A";
+                }
+                else
+                {
+                    stat="P";
+                }
+                server.connectServer("http://leomessi10.esy.es/addattendance.php?studid="+String.valueOf(students.get(position).id)+"&period="+hour+"&stat="+stat);
             }
         });
 

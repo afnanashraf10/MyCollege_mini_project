@@ -14,9 +14,11 @@ public class Teacher extends Activity {
     AppSettings settings;
     TextView name,branch,dob,email,phone;
     Button m_att;
+    Button m_int;
 
     public void init()
     {
+        m_int=(Button)findViewById(R.id.m_int);
         m_att=(Button)findViewById(R.id.m_att);
         settings=new AppSettings(getApplicationContext());
         name=(TextView)findViewById(R.id.prof_name);
@@ -33,6 +35,15 @@ public class Teacher extends Activity {
         setContentView(R.layout.activity_teacher);
         getActionBar().hide();
         init();
+
+        m_int.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i=new Intent(Teacher.this,AddInternalMarks.class);
+                startActivity(i);
+            }
+        });
+
         m_att.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -75,7 +86,6 @@ public class Teacher extends Activity {
             if  (responce.equals("0"))
                 {
                     studentEntry();
-                    Toast.makeText(getApplicationContext(), responce, Toast.LENGTH_SHORT).show();
                 }
             }
 

@@ -15,7 +15,7 @@ public class Student extends Activity {
     AppSettings settings;
     WebView timetable;
     TextView name,branch,sem,dob,email,phone;
-    Button stu_vtt,stu_vatt;
+    Button stu_vtt,stu_vatt,stu_vim;
 
 
     public void init()
@@ -29,6 +29,7 @@ public class Student extends Activity {
         phone=(TextView)findViewById(R.id.prof_phone);
         stu_vtt=(Button)findViewById(R.id.stu_vtt);
         stu_vatt=(Button)findViewById(R.id.stu_vatt);
+        stu_vim=(Button)findViewById(R.id.stu_vim);
     }
 
     @Override
@@ -49,6 +50,14 @@ public class Student extends Activity {
             @Override
             public void onClick(View v) {
                 Intent i=new Intent(Student.this,ViewAttendance.class);
+                startActivity(i);
+            }
+        });
+
+        stu_vim.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i=new Intent(Student.this,ViewInternalMark.class);
                 startActivity(i);
             }
         });

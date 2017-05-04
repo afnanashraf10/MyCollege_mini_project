@@ -6,26 +6,23 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Spinner;
-import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
 import java.util.List;
 
-public class AddAttendance extends Activity {
-    ListView studentslist;
-    Spinner branch,sem,hour;
+public class AddInternalMarks extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_attendance);
+        setContentView(R.layout.activity_add_internal_marks);
         getActionBar().hide();
-        studentslist=(ListView)findViewById(R.id.studentslist);
-        branch=(Spinner)findViewById(R.id.att_branch);
-        sem=(Spinner)findViewById(R.id.att_semester);
-        hour=(Spinner)findViewById(R.id.att_hour);
+
+        final Spinner branch=(Spinner)findViewById(R.id.att_branch);
+        final ListView studentslist=(ListView)findViewById(R.id.studentslist);
+        final Spinner sem=(Spinner)findViewById(R.id.att_semester);
 
         sem.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
         {
@@ -41,7 +38,7 @@ public class AddAttendance extends Activity {
                         List<LogIn> students;
                         Gson gson=new Gson();
                         students = gson.fromJson(responce, new TypeToken<List<LogIn>>(){}.getType());
-                        AttendanceAdapter adapter=new AttendanceAdapter(students,getApplicationContext(),convertFunction(hour));
+                        ScoreAdapter adapter=new ScoreAdapter(getApplicationContext(),students,branch.getSelectedItem().toString(),sem.getSelectedItem().toString());
                         studentslist.setAdapter(adapter);
                     }
 
@@ -61,22 +58,4 @@ public class AddAttendance extends Activity {
         });
 
     }
-
-
-    public String convertFunction(Spinner myspinner)
-    {
-        String text=myspinner.getSelectedItem().toString();
-        switch (text)
-        {
-            case "Period 1" : return "A1";
-            case "Period 2" : return "A2";
-            case "Period 3" : return "A3";
-            case "Period 4" : return "A4";
-            case "Period 5" : return "A5";
-            case "Period 6" : return "A6";
-            case "Period 7" : return "A7";
-            default: return "error";
-        }
-    }
-
 }

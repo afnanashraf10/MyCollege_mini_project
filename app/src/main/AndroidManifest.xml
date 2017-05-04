@@ -26,7 +26,9 @@
         <activity android:name=".TimeTable" />
         <activity android:name=".TimeTab" />
         <activity android:name=".AddAttendance" />
-        <activity android:name=".ViewAttendance"></activity>
+        <activity android:name=".ViewAttendance" />
+        <activity android:name=".AddInternalMarks" />
+        <activity android:name=".ViewInternalMark"></activity>
     </application>
 
 </manifest>
