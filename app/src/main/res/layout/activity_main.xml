@@ -7,6 +7,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="mp.kafa.mycollege.MainActivity">
+
+
     <LinearLayout
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
@@ -14,7 +16,8 @@
         android:layout_marginBottom="20dp"
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout2">
         <TextView
             android:textColor="#fff"
             android:typeface="serif"
@@ -77,6 +80,8 @@
                 android:layout_height="wrap_content"
                 android:text="LogIn" />
         </LinearLayout>
-    </LinearLayout>
 
+
+
+    </LinearLayout>
 </RelativeLayout>
