@@ -63,7 +63,7 @@ public class MainActivity extends Activity {
                             settings.saveSettings("sem",res[3]);
                             if (settings.retriveSettings("who").equals("admin"))
                             {
-                                Intent x=new Intent(MainActivity.this,Admin.class);
+                                Intent x=new Intent(MainActivity.this,AdminHome.class);
                                 startActivity(x);
                             }
                             else if (settings.retriveSettings("who").equals("student"))

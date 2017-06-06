@@ -28,7 +28,8 @@
         <activity android:name=".AddAttendance" />
         <activity android:name=".ViewAttendance" />
         <activity android:name=".AddInternalMarks" />
-        <activity android:name=".ViewInternalMark"></activity>
+        <activity android:name=".ViewInternalMark" />
+        <activity android:name=".AdminHome"></activity>
     </application>
 
 </manifest>
