@@ -31,5 +31,23 @@ public class AdminHome extends Activity {
                 startActivity(x);
             }
         });
+
+        vstudents.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent x=new Intent(AdminHome.this,ViewStudents.class);
+                startActivity(x);
+            }
+        });
+
+        vteachers.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent x=new Intent(AdminHome.this,ViewTeachers.class);
+                startActivity(x);
+            }
+        });
     }
 }

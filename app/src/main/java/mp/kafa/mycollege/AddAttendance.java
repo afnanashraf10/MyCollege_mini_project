@@ -27,7 +27,7 @@ public class AddAttendance extends Activity {
         sem=(Spinner)findViewById(R.id.att_semester);
         hour=(Spinner)findViewById(R.id.att_hour);
 
-        sem.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
+        hour.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
         {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id)
